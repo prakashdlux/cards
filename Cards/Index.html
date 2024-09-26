@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Card Component</title>
+</head>
+<body>
+ 
+    <div class="card">
+        <img src="download3.jpg" alt="Sample Image" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">Jet</h2>
+            <p class="card-description">A long narrow current of high-speed winds</p>
+            <button class="card-button" onclick="toggleForm()">Enter</button>
+        </div>
+    </div>
+    
+    <div class="card1">
+        <img src="download6.jpg" alt="Sample Image" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">Fighter jet</h2>
+            <p class="card-description">A long narrow current of high-speed winds</p>
+            <button class="card-button" onclick="toggleForm()">Enter</button>
+        </div>
+    </div>
+
+    <button id="nextButton">Next</button>
+
+    <div class="form-container" id="formContainer" style="display: none;">
+        <h2>Contact Us</h2>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="additionalCards"></div>
+
+    <script>
+        function toggleForm() {
+            const formContainer = document.getElementById('formContainer');
+            formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            alert(`Thank you, ${name}! Your email ${email} has been submitted.`);
+            
+            document.getElementById('contactForm').reset();
+            toggleForm(); 
+            
+            addCard(name);
+        }
+
+        const cardsData = [
+            { title: 'Cargo Plane', description: 'A large aircraft designed to carry cargo.', imgSrc: 'plane.jpg' },
+            { title: 'Helicopter', description: 'A type of rotorcraft in which lift and thrust are supplied by rotors.', imgSrc: 'helicopter.jpg' },
+            { title: 'Glider', description: 'A lighter-than-air aircraft that flies without an engine.', imgSrc: 'glider.jpg' }
+        ];
+
+        let cardIndex = 0; 
+
+        function addMoreCards() {
+            if (cardIndex < cardsData.length) {
+                const card = cardsData[cardIndex];
+                const cardContainer = document.getElementById('additionalCards');
+
+                cardContainer.innerHTML = '';
+
+                const newCard = document.createElement('div');
+                newCard.classList.add('card');
+
+                newCard.innerHTML = `
+                    <img src="${card.imgSrc}" alt="${card.title} Image" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">${card.title}</h2>
+                        <p class="card-description">${card.description}</p>
+                        <button class="card-button" onclick="toggleForm()">Enter</button>
+                    </div>
+                `;
+
+                cardContainer.appendChild(newCard);
+                cardIndex++; 
+            } else {
+                alert('No more cards to display!');
+            }
+        }
+
+        document.getElementById('nextButton').addEventListener('click', addMoreCards);
+    </script>
+</body>
+</html>

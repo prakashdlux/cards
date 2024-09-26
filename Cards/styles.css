@@ -1,0 +1,180 @@
+
+body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+ 
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border:2px solid red;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0;
+    transform: scale(1.05);
+}
+
+.card-description {
+    margin: 8px 0;
+}
+
+.card-button {
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+   
+}
+
+.card-button:hover {
+    background: blue;
+    transform: scale(1.05);
+    border: 2px solid black;
+  
+}
+
+
+.card1 {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    width: 300px;
+}
+
+.card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border:2px solid red;
+}
+
+.card1-image {
+    width: 100%;
+    height: auto;
+}
+
+.card1-content {
+    padding: 16px;
+}
+
+.card1-title {
+    font-size: 1.5em;
+    margin: 0;
+    transform: scale(1.05);
+}
+
+.card1-description {
+    margin: 8px 0;
+}
+
+.card1-button {
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+   
+}
+
+.card1-button:hover {
+    background: blue;
+    transform: scale(1.05);
+    border: 2px solid black;
+
+  
+}
+
+.form-container {
+    display: none; 
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+@media (max-width: 1000px) {
+    .card {
+        width: 250px;
+    }
+}
+
+@media (max-width: 800px) {
+    .card {
+        width: 200px; 
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+        box-shadow: none; 
+        }
+}
+@media (max-width: 400px) {
+    .card1 {
+        width: 100%; 
+        padding: 8px; 
+    }
+}
+
+
+.card1-button:hover {
+    background: blue;
+    transform: scale(1.05);
+    border: 2px solid black;
+  
+}
+@media (max-width: 1000px) {
+    .card1 {
+        width: 250px;
+    }
+}
+
+@media (max-width: 800px) {
+    .card1 {
+        width: 200px; 
+    }
+}
+
+@media (max-width: 500px) {
+    .card1 {
+        width: 100%;
+        box-shadow: none; 
+        }
+}
+@media (max-width: 400px) {
+    .card1 {
+        width: 100%; 
+        padding: 8px; 
+    }
+}
